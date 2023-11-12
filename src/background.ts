@@ -1,6 +1,13 @@
-function polling() {
-  // console.log("polling");
-  setTimeout(polling, 1000 * 30);
-}
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.contextMenus.create({
+    contexts: ["selection"],
+    title: "Translate this word",
+    id: "Translate",
+  });
+});
 
-polling();
+
+chrome.contextMenus.onClicked.addListener(async (event) => {
+});
+
+
